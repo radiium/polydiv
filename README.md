@@ -1,16 +1,16 @@
 # Polydiv  
 
-## Clipping html element in random polygon  
+### Clipping html element in random polygon  
 
 
-### Explanation:  
+## Explanation:  
 This module generate random number of random 2d coordinate,  
 finding and keeping convex hull (Algorithm found here: [nayuki.io/page/convex-hull-algorithm](https://www.nayuki.io/page/convex-hull-algorithm))  
 then use it for add css "clip-path" rules  
 <img src="https://raw.githubusercontent.com/radiium/polydiv/master/site/convex-hull.png" alt="Convex hull " height="100">
 
 
-### Demo:
+## Demo:
 
 [https://radiium.github.io/polydiv/](https://radiium.github.io/polydiv/)
 
@@ -19,7 +19,7 @@ then use it for add css "clip-path" rules
 [polydiv.js](https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.js)  
 [polydiv.min.js](https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.min.js)  
 
-### Usage:
+## Usage:
 
 1 - In html
 ```html
@@ -51,7 +51,7 @@ polydivInstance.unClipItems(function(err) {
 });
 ```
 
-### Development:
+## Development:
 
 ```bash
 # Install deps
@@ -62,5 +62,6 @@ npm run dist
 ```
 
 
-https://developer.mozilla.org/fr/docs/Web/CSS/clip-path  
-Algo see: <br/>
+## References: 
+- css 'clip-path' rule [developer.mozilla.org/fr/docs/Web/CSS/clip-path](https://developer.mozilla.org/fr/docs/Web/CSS/clip-path)  
+- Convex hull algorithm [nayuki.io/page/convex-hull-algorithm](https://www.nayuki.io/page/convex-hull-algorithm)  
