@@ -1,11 +1,28 @@
 
+/* @preserve
+
+    ██████╗  ██████╗ ██╗  ██╗   ██╗    ██████╗ ██╗██╗   ██╗
+    ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝    ██╔══██╗██║██║   ██║
+    ██████╔╝██║   ██║██║   ╚████╔╝     ██║  ██║██║██║   ██║
+    ██╔═══╝ ██║   ██║██║    ╚██╔╝      ██║  ██║██║╚██╗ ██╔╝
+    ██║     ╚██████╔╝███████╗██║       ██████╔╝██║ ╚████╔╝
+    ╚═╝      ╚═════╝ ╚══════╝╚═╝       ╚═════╝ ╚═╝  ╚═══╝
+
+    ----------------------------------------------------
+
+    git repo: https://github.com/radiium/polydiv
+    Description: Clipping html element in random polygon
+
+
+*/
+
 (function (root, factory) {
 	if ( typeof define === 'function' && define.amd ) {
 		define([], factory(root));
 	} else if ( typeof exports === 'object' ) {
 		module.exports = factory(root);
 	} else {
-		root.polydiv = factory(root);
+		root.Polydiv = factory(root);
 	}
 })(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
 
@@ -14,7 +31,7 @@
 
     var Constructor = function (options) {
 
-        var polydiv = {
+        var Polydiv = {
             items: [],
             settings: {}
         };
@@ -29,22 +46,25 @@
          *
          */
 
-        // PUBLIC METHODS
-        polydiv.init = function(opts) {
+        // Init polydiv
+        Polydiv.init = function(opts) {
             this.settings = Object.assign({}, defaults, opts || {});
             this.items = getItems(opts.itemClass);
         }
 
-        polydiv.destroy = function() {
+        // Destroy polydiv
+        Polydiv.destroy = function() {
             this.settings = Object.assign({}, defaults);
+            this.unClipItems();
             this.items = [];
         }
 
-        polydiv.clipItems = function(callback) {
+        // Add random clip-path rules on each items
+        Polydiv.clipItems = function(callback) {
 
-            for (let i = 0; i < this.items.length; i++) {
-                const points = generateRandomPoints();
-                const clipPathRule = this.generateClipPathRule(points);
+            for (var i = 0; i < this.items.length; i++) {
+                var points = generateRandomPoints();
+                var clipPathRule = this.pointsToClipPathRule(points);
                 this.items[i].style.clipPath = clipPathRule;
             }
 
@@ -54,8 +74,9 @@
             }
         }
 
-        polydiv.unClipItems = function(callback) {
-            for (let i = 0; i < this.items.length; i++) {
+        // Remove clip-path rules on each items
+        Polydiv.unClipItems = function(callback) {
+            for (var i = 0; i < this.items.length; i++) {
                 this.items[i].style.clipPath = '';
             }
         }
@@ -67,7 +88,13 @@
          *
          */
 
-        polydiv.generateClipPathRule = function(points) {
+         // Get HTML items
+        var getItems = function(itemsClass) {
+            return document.getElementsByClassName(itemsClass);
+        }
+
+        // Set points to a clip-path rules
+        Polydiv.pointsToClipPathRule = function(points) {
             var str = [];
             var hulls = makeHull(points);
             for (var i = 0; i < hulls.length; i++) {
@@ -83,21 +110,9 @@
             return clip;
         }
 
-        // Get items
-        var getItems = function(itemsClass) {
-            return document.getElementsByClassName(itemsClass);
-        }
-
-        /*
-        var checkPoints = function(points) {
-            var checkCoord= (coord) => coord && typeof coord === 'number';
-            return points.filter((p) => p && (checkCoord(p.x) && checkCoord(p.x)));
-        }
-        */
-
         // Generate random number of random 2d coordinates
         function generateRandomPoints() {
-            var numPoints = getRandomBetween(6, 180); // Math.round(Math.pow(30, Math.random()) * 6);
+            var numPoints = getRandom(6, 180); // Math.round(Math.pow(30, Math.random()) * 6);
             var points = [];
             for (var i = 0; i < numPoints; i++) {
                 points.push({
@@ -181,16 +196,15 @@
         };
 
 
-
         /**
          *
          *  INIT PLUGIN
          *
          */
 
-		polydiv.init(options);
+		Polydiv.init(options);
 
-		return polydiv;
+		return Polydiv;
 	};
 
 	return Constructor;;
