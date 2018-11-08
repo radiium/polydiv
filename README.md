@@ -5,9 +5,9 @@
 
 ### Explanation:  
 This module generate random number of random 2d coordinate,  
-finding and keeping convex hull  
+finding and keeping convex hull (Algorithm found here: [nayuki.io/page/convex-hull-algorithm](https://www.nayuki.io/page/convex-hull-algorithm))  
 then use it for add css "clip-path" rules  
-<img src="https://raw.githubusercontent.com/radiium/polydiv/master/site/convex-hull.png" alt="convex hull" height="100">
+<img src="https://raw.githubusercontent.com/radiium/polydiv/master/site/convex-hull.png" alt="Convex hull " height="100">
 
 
 ### Demo:
@@ -59,4 +59,4 @@ npm run dist
 
 
 https://developer.mozilla.org/fr/docs/Web/CSS/clip-path  
-Algo see: https://www.nayuki.io/page/convex-hull-algorithm<br/>
+Algo see: <br/>
