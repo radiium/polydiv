@@ -1,6 +1,6 @@
 # Polydiv  
 
-### Clipping html element in random polygon with the css '[clip-path](https://developer.mozilla.org/fr/docs/Web/CSS/clip-path) ' rule.
+### Clipping html element in random polygon with the css '[clip-path](https://developer.mozilla.org/fr/docs/Web/CSS/clip-path)' rule.
 
 
 ## how it works:  
