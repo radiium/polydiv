@@ -1,9 +1,9 @@
 # Polydiv  
 
-### Clipping html element in random polygon  
+### Clipping html element in random polygon with the css '[clip-path](https://developer.mozilla.org/fr/docs/Web/CSS/clip-path) ' rule.
 
 
-## Explanation:  
+## how it works:  
 This module generate random number of random 2d coordinate,  
 finding and keeping convex hull (Algorithm found [here](https://www.nayuki.io/page/convex-hull-algorithm))  
 then use it for add css "clip-path" rules  

@@ -21,11 +21,11 @@
         }
 
         .wrapper {
-            padding: 30px;
             box-sizing: border-box;
         }
 
         .header {
+            padding: 10px 30px;
             margin-bottom: 20px;
         }
 
@@ -40,6 +40,7 @@
         }
 
         .control {
+            padding: 10px 30px;
             margin-bottom: 20px;
         }
 
@@ -58,6 +59,7 @@
         }
 
         .polydivContainer {
+            margin: 10px 30px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -91,6 +93,9 @@
         <div class="header">
             <div class="title">Polydiv</div>
             <div class="description">Add random 'clip-path' rules to childrens of given element.</div>
+            <div class="description">
+                    <a href="https://github.com/radiium/polydiv#polydiv">Documentation</a>
+            </div>
         </div>
 
         <div class="control">
@@ -108,18 +113,15 @@
         function appendPolydivItems(n) {
             var container = document.getElementsByClassName('polydivContainer')[0];
             for (var i = 0; i < n + 1; i++) {
-                var img = document.createElement('img');
-                img.src = 'https://picsum.photos/200/200/?random';
+                    var count = document.createElement('div');
+                    count.innerHTML = i + 1;
 
-                var count = document.createElement('div');
-                count.innerHTML = i + 1;
+                    var el = document.createElement('div');
+                    el.className = 'poylidivItem';
+                    el.style.background = 'url(https://picsum.photos/300/300/?random&dummyParam=' + i + ')'
+                    el.appendChild(count);
 
-                var el = document.createElement('div');
-                el.className = 'poylidivItem';
-                // el.appendChild(img);
-                el.appendChild(count);
-                el.style.background = 'url(https://picsum.photos/300/300/?random)'
-                container.appendChild(el);
+                    container.appendChild(el);
 
             }
         }
