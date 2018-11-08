@@ -14,10 +14,12 @@ then use it for add css "clip-path" rules
 
 [https://radiium.github.io/polydiv/](https://radiium.github.io/polydiv/)
 
+
 ## Download:  
 
 [polydiv.js](https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.js)  
 [polydiv.min.js](https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.min.js)  
+
 
 ## Usage:
 
@@ -35,6 +37,7 @@ then use it for add css "clip-path" rules
 <script type="text/javascript" src="./polydiv.min.js"></script>
 ```
 
+
 2 - In javascript
 ```javascript
 // Init Polydiv
@@ -50,6 +53,7 @@ polydivInstance.unClipItems(function(err) {
     // All items are unclipped
 });
 ```
+
 
 ## Development:
 
