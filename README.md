@@ -4,15 +4,15 @@
 
 
 ### Explanation:  
-This module generate random number of random 2d coordinate,
-finding and keeping convex hull
-then use it for add css "clip-path" rules
+This module generate random number of random 2d coordinate,  
+finding and keeping convex hull  
+then use it for add css "clip-path" rules  
 ![convex hull](./site/convex-hull.png)
 
 
 ### Demo:
 
-[Here](https://radiium.github.io/polydiv/)
+[Here](https://radiium.github.io/polydiv/ =250x)
 
 
 ### Usage:
