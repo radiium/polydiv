@@ -1,6 +1,6 @@
 {
   "name": "polydiv",
-  "description": "Generate random polygon",
+  "description": "Clipping html element in random polygon",
   "version": "1.0.0",
   "license": "ISC",
   "homepage": "https://github.com/radiium/polydiv",
@@ -16,7 +16,7 @@
   "main": "polydiv.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "uglifyjs --compress --mangle -o output.js --comments `/^!/`-- polydiv.js "
+    "dist": "uglifyjs --compress --mangle -o polydiv.min.js --comments `/^!/`-- polydiv.js "
   },
   "devDependencies": {
     "uglify-js": "^3.4.9"
