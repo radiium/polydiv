@@ -1,0 +1,22 @@
+{
+
+  "name": "polydiv",
+  "description": "Generate random polygon",
+  "version": "1.0",
+  "license": "ISC",
+  "homepage": "https://github.com/radiium/polydiv",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/radiium/polydiv.git"
+  },
+  "author": {
+    "name": "radiium",
+    "email": "remip.dev@gmail.com",
+    "url": "https://github.com/radiium"
+  },
+
+  "main": "polydiv.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
