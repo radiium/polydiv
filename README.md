@@ -16,9 +16,8 @@ then use it for add css "clip-path" rules
 
 ## Download:  
 
-<a href="https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.js" target="_blank">polydiv.js</a>
-<a href="https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.min.js" target="_blank">polydiv.min.js</a>
-
+[polydiv.js](https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.js)
+[polydiv.min.js](https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.min.js)
 
 ### Usage:
 
