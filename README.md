@@ -12,12 +12,12 @@ then use it for add css "clip-path" rules
 
 ### Demo:
 
-[https://radiium.github.io/polydiv/](https://radiium.github.io/polydiv/ )
+[https://radiium.github.io/polydiv/](https://radiium.github.io/polydiv/)
 
 ## Download:  
 
-[polydiv.js](https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.js)
-[polydiv.min.js](https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.min.js)
+[polydiv.js](https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.js)  
+[polydiv.min.js](https://raw.githubusercontent.com/radiium/polydiv/master/polydiv.min.js)  
 
 ### Usage:
 
