@@ -12,7 +12,7 @@ then use it for add css "clip-path" rules
 
 ### Demo:
 
-[Here](https://radiium.github.io/polydiv/ )
+[https://radiium.github.io/polydiv/](https://radiium.github.io/polydiv/ )
 
 
 ### Usage:
