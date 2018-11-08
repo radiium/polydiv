@@ -1,8 +1,7 @@
 {
-
   "name": "polydiv",
   "description": "Generate random polygon",
-  "version": "1.0",
+  "version": "1.0.0",
   "license": "ISC",
   "homepage": "https://github.com/radiium/polydiv",
   "repository": {
@@ -14,9 +13,13 @@
     "email": "remip.dev@gmail.com",
     "url": "https://github.com/radiium"
   },
-
   "main": "polydiv.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "uglifyjs --compress --mangle -o output.js --comments `/^!/`-- polydiv.js "
+  },
+  "devDependencies": {
+    "uglify-js": "^3.4.9"
+  },
+  "dependencies": {}
 }
