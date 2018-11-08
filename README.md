@@ -7,7 +7,7 @@
 This module generate random number of random 2d coordinate,  
 finding and keeping convex hull  
 then use it for add css "clip-path" rules  
-![convex hull](./site/convex-hull.png =250x)
+<img src="https://raw.githubusercontent.com/radiium/polydiv/master/site/convex-hull.png" alt="convex hull" height="100">
 
 
 ### Demo:
