@@ -13,6 +13,12 @@
     "email": "remip.dev@gmail.com",
     "url": "https://github.com/radiium"
   },
+  "keywords": [
+    "css",
+    "clip-path",
+    "random polygon",
+    "convex hull"
+  ],
   "main": "polydiv.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
