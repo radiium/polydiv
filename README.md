@@ -1,15 +1,25 @@
-#Polydiv  
+# Polydiv  
 
 ## Clipping html element in random polygon  
 
 
+### Explanation:  
+This module generate random number of random 2d coordinate,
+finding and keeping convex hull
+then use it for add css "clip-path" rules
+![convex hull](./site/convex-hull.png)
+
+
 ### Demo:
 
-### usage:
+[Here](https://radiium.github.io/polydiv/)
 
+
+### Usage:
+
+1 - In html
 ```html
-
-<!-- Create html structure -->
+<!-- Create structure -->
 <div>
     <div class="item">1</div>
     <div class="item">2</div>
@@ -21,6 +31,7 @@
 <script type="text/javascript" src="./polydiv.min.js"></script>
 ```
 
+2 - In javascript
 ```javascript
 // Init Polydiv
 var polydivInstance = new Polydiv({ itemClass: 'item'});
