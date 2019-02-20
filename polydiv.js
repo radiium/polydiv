@@ -1,7 +1,7 @@
 
 /* @preserve
 
-    POLYDIV v1.0.0
+    POLYDIV v1.0.1
     ----------------------------------------------------
     git repo: https://github.com/radiium/polydiv
     Description: Clipping html element in random polygon
@@ -19,7 +19,6 @@
 })(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
 
     'use strict';
-
 
     var Constructor = function (options) {
 
@@ -73,7 +72,6 @@
             }
         }
 
-
         /**
          *
          *  PRIVATE METHODS
@@ -82,7 +80,7 @@
 
          // Get HTML items
         var getItems = function(itemsClass) {
-            return document.getElementsByClassName(itemsClass);
+            return document.querySelectorAll(itemsQuery);
         }
 
         // Set points to a clip-path rules
@@ -96,8 +94,8 @@
             var clip = 'polygon(' + str.join(',') +')';
             /*
             '-webkit-clip-path: polygon(' + str.join(',') + ');' +
-                        'clip-path: polygon(' + str.join(',') +');';
-                        */
+                    'clip-path: polygon(' + str.join(',') +');';
+            */
 
             return clip;
         }
@@ -186,7 +184,6 @@
         var getRandom = function() {
             return Math.round(Math.pow(30, Math.random()) * 6);
         };
-
 
         /**
          *
