@@ -41,7 +41,9 @@ then use it for add css "clip-path" rules
 2 - In javascript
 ```javascript
 // Init Polydiv
-var polydivInstance = new Polydiv({ itemClass: 'item'});
+var polydivInstance = new Polydiv({ query: '.item'}, function(err) {
+    // Polydiv init done
+});
 
 // Clip items 
 polydivInstance.clipItems(function(err) {
@@ -51,6 +53,11 @@ polydivInstance.clipItems(function(err) {
 // Unclip items
 polydivInstance.unClipItems(function(err) {
     // All items are unclipped
+});
+
+// Destroy Polydiv
+polydivInstance.destroy(function(err) {
+    // Polydiv destroy done
 });
 ```
 
