@@ -79,7 +79,7 @@
          */
 
          // Get HTML items
-        var getItems = function(itemsClass) {
+        var getItems = function(itemsQuery) {
             return document.querySelectorAll(itemsQuery);
         }
 
