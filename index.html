@@ -121,7 +121,6 @@
     <!-- Demo scrpt -->
     <script type="text/javascript">
 
-        var callback = function() { console.log('Done'); }
 
         // Generate and add items to the DOM
         function appendPolydivItems(n) {
@@ -141,18 +140,23 @@
         }
         appendPolydivItems(12)
 
-
         // Create and init polydiv instance
-        var polys = new Polydiv({ itemClass: 'poylidivItem'});
+        var polys = new Polydiv({ query: '.poylidivItem'}, function() {
+            console.log('Polydiv init Done!');
+        });
 
         // Clip items
         var randomize = function() {
-            polys.clipItems(callback);
+            polys.clipItems(function() {
+                console.log('Polydiv clipItems Done!');
+            });
         }
 
         // Unclip items
         var remove = function() {
-            polys.unClipItems(callback);
+            polys.unClipItems(function() {
+                console.log('Polydiv unClipItems Done!');
+            });
         }
 
         randomize();

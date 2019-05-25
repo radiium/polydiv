@@ -28,7 +28,7 @@
         };
 
         var defaults = {
-            itemClass: 'polydiv',
+            query: '.polydiv',
         };
 
         /**
@@ -38,16 +38,24 @@
          */
 
         // Init polydiv
-        Polydiv.init = function(opts) {
+        Polydiv.init = function(opts, callback) {
             this.settings = Object.assign({}, defaults, opts || {});
-            this.items = getItems(opts.itemClass);
+            this.items = getItems(opts.query);
+
+            if (callback && typeof callback === 'function') {
+                callback();
+            }
         }
 
         // Destroy polydiv
-        Polydiv.destroy = function() {
+        Polydiv.destroy = function(callback) {
             this.settings = Object.assign({}, defaults);
             this.unClipItems();
             this.items = [];
+
+            if (callback && typeof callback === 'function') {
+                callback();
+            }
         }
 
         // Add random clip-path rules on each items
@@ -55,13 +63,12 @@
 
             for (var i = 0; i < this.items.length; i++) {
                 var points = generateRandomPoints();
-                var clipPathRule = this.pointsToClipPathRule(points);
+                var clipPathRule = pointsToClipPathRule(points);
                 this.items[i].style.clipPath = clipPathRule;
             }
 
             if (callback && typeof callback === 'function') {
-                var msg = (this.items.length === 0) ? 'No items to clip...' : null;
-                callback(msg);
+                callback(this.items);
             }
         }
 
@@ -69,6 +76,10 @@
         Polydiv.unClipItems = function(callback) {
             for (var i = 0; i < this.items.length; i++) {
                 this.items[i].style.clipPath = '';
+            }
+
+            if (callback && typeof callback === 'function') {
+                callback(this.items);
             }
         }
 
@@ -79,12 +90,12 @@
          */
 
          // Get HTML items
-        var getItems = function(itemsQuery) {
+         function getItems(itemsQuery) {
             return document.querySelectorAll(itemsQuery);
         }
 
         // Set points to a clip-path rules
-        Polydiv.pointsToClipPathRule = function(points) {
+        function pointsToClipPathRule(points) {
             var str = [];
             var hulls = makeHull(points);
             for (var i = 0; i < hulls.length; i++) {
@@ -116,7 +127,7 @@
 
         // Algorithm from https://www.nayuki.io/page/convex-hull-algorithm
         // Returns the convex hull, assuming that each points[i] <= points[i + 1]. Runs in O(n) time.
-        var makeHull = function(points) {
+        function makeHull(points) {
 
             points.sort(POINT_COMPARATOR);
 
@@ -162,7 +173,7 @@
         };
 
         // Points value comparator
-        var POINT_COMPARATOR = function(a, b) {
+        function POINT_COMPARATOR(a, b) {
             if (a.x < b.x)
                 return -1;
             else if (a.x > b.x)
@@ -176,12 +187,12 @@
         };
 
         // Generate random number between min and max
-        var getRandomBetween = function(min, max) {
+        function getRandomBetween(min, max) {
             return Math.floor(Math.random() * (max - min + 1) + min);
         };
 
         // Generate random number between 6 and 180
-        var getRandom = function() {
+        function getRandom() {
             return Math.round(Math.pow(30, Math.random()) * 6);
         };
 

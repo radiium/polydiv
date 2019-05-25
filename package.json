@@ -1,7 +1,7 @@
 {
   "name": "polydiv",
   "description": "Clipping html element in random polygon",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "license": "ISC",
   "homepage": "https://github.com/radiium/polydiv",
   "repository": {
